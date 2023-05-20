@@ -24,8 +24,8 @@ n_samples, n_features = 10, 5
 rng = np.random.RandomState(0)
 AMD=loadmat('pm25_regression.mat')
 
-X=AMD["matRadd2"][:,[0,1,2,4]]
-Y=AMD["matRadd2"][:,5]
+X=AMD["matRaddB2"][:,[0,1,2,4]]
+Y=AMD["matRaddB2"][:,5]
 # X_s = preprocessing.scale(X)
 # Y_s = preprocessing.scale(Y)
 
@@ -39,13 +39,13 @@ idx = list(range(size))
 R.shuffle(idx)
 #shuffle the data
 XR,YR=[X[idx], Y[idx]]
-cv = RepeatedKFold(n_splits=5, n_repeats=1, random_state=1)
+cv = RepeatedKFold(n_splits=5, n_repeats=10, random_state=1)
 
 #%%
 scores=[]
 pipe = Pipeline([
         ('scale', StandardScaler()),
-        ('reg', SVR(kernel='rbf', C=1, gamma=1,epsilon=0.2))])# svr = SVR(kernel='rbf', C=1e1, gamma=0.1)
+        ('reg', SVR(kernel='rbf', C=750, gamma=76,epsilon=0.01))])# svr = SVR(kernel='rbf', C=1e1, gamma=0.1)
 svr=SVR()
 # kernel='rbf', C=1e4, gamma=1e2
 # # for model in models:
@@ -66,7 +66,7 @@ fnl=np.array(asx)
 # fnl[:,[2,3]]=np.sqrt(-(asx[0][2]))
 # fnl[:,[4,5]]=np.sqrt(np.abs(fnl[:,[4,5]]))
 # fnl[:,[6,7]]=(np.abs(fnl[:,[6,7]]))
-fnl[:,[2,3]]=np.sqrt(np.abs(fnl[:,[2,3]]))
+fnl[:,[2]]=np.sqrt(np.abs(fnl[:,[2]]))
 # fnl[:,[6,7]]=(np.abs(fnl[:,[4,5]]))
             # 
 print(fnl)
