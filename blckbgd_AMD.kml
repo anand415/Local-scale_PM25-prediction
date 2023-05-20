@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<GroundOverlay>
+	<name>blckbgd_AMD</name>
+	<Camera>
+		<longitude>72.51797338680791</longitude>
+		<latitude>23.01691552086735</latitude>
+		<altitude>6455.277779971466</altitude>
+		<heading>-17.38266730978752</heading>
+		<tilt>6.08469192390857</tilt>
+		<roll>53.7330923918396</roll>
+		<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+	</Camera>
+	<color>75ffffff</color>
+	<Icon>
+		<href>C:/Users/anand/Pictures/bck_blck.png</href>
+		<viewBoundScale>0.75</viewBoundScale>
+	</Icon>
+	<LatLonBox>
+		<north>23.14201497138847</north>
+		<south>22.94305021853327</south>
+		<east>72.70759704443043</east>
+		<west>72.34741748575642</west>
+	</LatLonBox>
+</GroundOverlay>
+</kml>
